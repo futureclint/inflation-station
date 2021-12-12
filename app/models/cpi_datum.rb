@@ -1,0 +1,2 @@
+class CpiDatum < ApplicationRecord
+end
