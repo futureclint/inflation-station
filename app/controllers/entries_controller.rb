@@ -1,5 +1,7 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show, :update, :destroy]
+  before_action :set_entry, only: :show
+  before_action :authorize_request, only: :create
+  before_action :set_user_entry, only: [:update, :destroy]
 
   # GET /entries
   def index
@@ -16,9 +18,9 @@ class EntriesController < ApplicationController
   # POST /entries
   def create
     @entry = Entry.new(entry_params)
-
+    @entry.user = @current_user
     if @entry.save
-      render json: @entry, status: :created, location: @entry
+      render json: @entry, status: :created
     else
       render json: @entry.errors, status: :unprocessable_entity
     end
@@ -44,8 +46,12 @@ class EntriesController < ApplicationController
       @entry = Entry.find(params[:id])
     end
 
+    def set_user_entry
+      @entry = @current_user.entries.find(params[:id])
+    end
+
     # Only allow a list of trusted parameters through.
     def entry_params
-      params.require(:entry).permit(:starting_value, :starting_year, :ending_value, :ending_year, :description, :user_id)
+      params.require(:entry).permit(:starting_value, :starting_year, :ending_value, :ending_year, :description)
     end
 end
