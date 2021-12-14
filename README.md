@@ -1,5 +1,8 @@
 # Inflation Station
 
+Deployed front-end: <a href="http://inflation-station.surge.sh/login" target="_blank">http://inflation-station.surge.sh/login</a>
+Deployed back-end: <a href="https://inflation-station.herokuapp.com" target="_blank">https://inflation-station.herokuapp.com</a>
+
 ## ERD
 
 <img src="img/erd.png" width="376" />
