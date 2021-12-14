@@ -1,9 +1,10 @@
 import './App.css';
 import {useState} from 'react';
 import {Switch, Route} from 'react-router-dom';
+import {loginUser} from './services/auth';
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
-import {loginUser} from './services/auth';
+import Register from './screens/Register';
 
 function App() {
 
@@ -20,6 +21,9 @@ function App() {
         <Switch>
           <Route path='/login'>
             <Login handleLogin={handleLogin} />
+          </Route>
+          <Route path='/register'>
+            <Register />
           </Route>
         </Switch>
       </Layout>
