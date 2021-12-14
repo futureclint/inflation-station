@@ -1,7 +1,7 @@
 import './App.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {Switch, Route, useHistory} from 'react-router-dom';
-import {loginUser, registerUser} from './services/auth';
+import {loginUser, registerUser, verifyUser} from './services/auth';
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
 import Register from './screens/Register';
@@ -11,6 +11,14 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   const history = useHistory();
+
+  useEffect(() => {
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
+    }
+    handleVerify();
+  }, []);
 
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
