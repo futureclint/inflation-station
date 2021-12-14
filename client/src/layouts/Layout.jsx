@@ -10,7 +10,10 @@ export default function Layout(props) {
         <h1>Inflation Station</h1>
         <nav>
           { currentUser
-            ? <span>User Logged In</span>
+            ? <div>
+                <span>{currentUser.email}</span>
+                <button>Logout</button>
+              </div>
             : <Link to='/login'>Login/Register</Link>
           }
         </nav>
