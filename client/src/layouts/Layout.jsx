@@ -5,21 +5,30 @@ export default function Layout(props) {
   const {currentUser, handleLogout} = props;
 
   return (
-    <div>
+    <>
       <header>
         <h1>Inflation Station</h1>
         <nav>
+          <Link to='/'>Calculate</Link>
+          <Link to='/about'>About</Link>
           { currentUser
-            ? <div>
-                <span>{currentUser.email}</span>
-                <button onClick={handleLogout}>Logout</button>
-              </div>
+            ? <Link to='/' onClick={handleLogout}>Logout</Link>
             : <Link to='/login'>Login/Register</Link>
           }
         </nav>
       </header>
       <hr />
-      {props.children}
-    </div>
+      <main>
+        {props.children}
+      </main>
+      <hr />
+      <footer>
+        <span>&copy; 2021 Clint Gunter</span>
+        { currentUser
+          ? <span>Logged in as {currentUser.email}</span>
+          : ''
+        }
+      </footer>
+    </>
   )
 }
