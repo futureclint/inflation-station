@@ -1,6 +1,6 @@
 import './App.css';
 import {useState} from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, useHistory} from 'react-router-dom';
 import {loginUser, registerUser} from './services/auth';
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
@@ -10,14 +10,18 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState(null);
 
+  const history = useHistory();
+
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
     setCurrentUser(userData);
+    history.push('/');
   }
 
   const handleRegister = async (formData) => {
     const userData = await registerUser(formData);
     setCurrentUser(userData);
+    history.push('/');
   }
 
   return (
