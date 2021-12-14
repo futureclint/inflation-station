@@ -1,7 +1,8 @@
 body {
   padding: 20px;
   background-color: #202020;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    'Helvetica', 'Arial', sans-serif;
   font-size: 16px;
   color: #ffffff;
 }
@@ -10,7 +11,38 @@ h1, h2, h3, h4, h5, p {
 }
 hr {
   height: 1px;
-  margin: 0;
+  margin: 20px 0;
   border: none;
   background-color: #ff0043;
+}
+a {
+  color: #ff0043;
+}
+
+/* Header ------------------------------------------------------------------- */
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+header h1 {
+  margin-right: 10px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+/* Form --------------------------------------------------------------------- */
+
+form label,
+form input,
+form button {
+  display: block;
+  margin: 6px 0;
 }

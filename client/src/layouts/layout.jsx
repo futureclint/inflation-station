@@ -9,6 +9,7 @@ export default function Layout(props) {
           <Link to='/login'>Login/Register</Link>
         </nav>
       </header>
+      <hr />
       {props.children}
     </div>
   )
