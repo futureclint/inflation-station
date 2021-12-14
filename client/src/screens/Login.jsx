@@ -1,12 +1,16 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 
-export default function Login() {
+export default function Login(props) {
+
   const[formData, setFormData] = useState({
     email: '',
     password: '',
   });
+
   const {email, password} = formData;
+
+  const {handleLogin} = props;
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -19,7 +23,10 @@ export default function Login() {
   return (
     <>
       <h2>Login</h2>
-      <form>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        handleLogin(formData);
+      }}>
         <label for='form-email'>email</label>
         <input id='form-email'
           type='text'
