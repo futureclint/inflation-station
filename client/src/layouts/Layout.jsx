@@ -23,11 +23,15 @@ export default function Layout(props) {
       </main>
       <hr />
       <footer>
-        <span>&copy; 2021 Clint Gunter</span>
+        <div className="footer-left">
+          <span>&copy; 2021 Clint Gunter</span>
+        </div>
+        <div className="footer-right">
         { currentUser
           ? <span>Logged in as {currentUser.email}</span>
           : ''
         }
+        </div>
       </footer>
     </>
   )

@@ -46,3 +46,11 @@ form button {
   display: block;
   margin: 6px 0;
 }
+
+/* Footer ------------------------------------------------------------------- */
+
+footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
