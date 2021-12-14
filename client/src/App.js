@@ -5,6 +5,7 @@ import {loginUser, registerUser, verifyUser, removeToken} from './services/auth'
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
 import Register from './screens/Register';
+import About from './screens/About';
 
 function App() {
 
@@ -47,6 +48,9 @@ function App() {
           </Route>
           <Route path='/register'>
             <Register handleRegister={handleRegister} />
+          </Route>
+          <Route path='/about'>
+            <About />
           </Route>
         </Switch>
       </Layout>
