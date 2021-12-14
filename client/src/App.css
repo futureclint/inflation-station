@@ -53,6 +53,16 @@ form button {
   margin: 6px 0;
 }
 
+/* Entries ------------------------------------------------------------------ */
+
+.entries {
+  margin-top: 50px;
+}
+.entries span {
+  padding: 5px 10px;
+  background: #111;
+}
+
 /* Footer ------------------------------------------------------------------- */
 
 footer {
