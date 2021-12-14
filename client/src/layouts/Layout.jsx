@@ -27,10 +27,7 @@ export default function Layout(props) {
           <span>&copy; 2021 Clint Gunter</span>
         </div>
         <div className="footer-right">
-        { currentUser
-          ? <span>Logged in as {currentUser.email}</span>
-          : ''
-        }
+          {currentUser && <span>Logged in as {currentUser.email}</span>}
         </div>
       </footer>
     </>
