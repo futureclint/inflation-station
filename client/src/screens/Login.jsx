@@ -27,14 +27,14 @@ export default function Login(props) {
         e.preventDefault();
         handleLogin(formData);
       }}>
-        <label for='form-email'>email</label>
+        <label htmlFor='form-email'>email</label>
         <input id='form-email'
           type='text'
           name='email'
           value={email}
           onChange={handleChange}
         />
-        <label for='form-password'>password</label>
+        <label htmlFor='form-password'>password</label>
         <input id='form-password'
           type='password'
           name='password'
