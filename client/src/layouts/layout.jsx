@@ -6,7 +6,7 @@ export default function Layout(props) {
       <header>
         <h1>Inflation Station</h1>
         <nav>
-          <Link>Login/Register</Link>
+          <Link to='/login'>Login/Register</Link>
         </nav>
       </header>
       {props.children}
