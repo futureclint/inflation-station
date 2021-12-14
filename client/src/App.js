@@ -6,7 +6,7 @@ import Layout from './layouts/Layout';
 import Login from './screens/Login';
 import Register from './screens/Register';
 import About from './screens/About';
-import Calculate from './screens/Calculate';
+import Main from './containers/Main';
 
 function App() {
 
@@ -54,7 +54,7 @@ function App() {
             <About />
           </Route>
           <Route path='/'>
-            <Calculate />
+            <Main />
           </Route>
         </Switch>
       </Layout>
