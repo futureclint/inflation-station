@@ -1,7 +1,7 @@
 import './App.css';
 import {useState} from 'react';
 import {Switch, Route} from 'react-router-dom';
-import {loginUser} from './services/auth';
+import {loginUser, registerUser} from './services/auth';
 import Layout from './layouts/Layout';
 import Login from './screens/Login';
 import Register from './screens/Register';
@@ -15,6 +15,11 @@ function App() {
     setCurrentUser(userData);
   }
 
+  const handleRegister = async (formData) => {
+    const userData = await registerUser(formData);
+    setCurrentUser(userData);
+  }
+
   return (
     <div className="App">
       <Layout>
@@ -23,7 +28,7 @@ function App() {
             <Login handleLogin={handleLogin} />
           </Route>
           <Route path='/register'>
-            <Register />
+            <Register handleRegister={handleRegister} />
           </Route>
         </Switch>
       </Layout>

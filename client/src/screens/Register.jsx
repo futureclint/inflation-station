@@ -9,7 +9,7 @@ export default function Register(props) {
 
   const {email, password} = formData;
 
-  const {handleLogin} = props;
+  const {handleRegister} = props;
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -24,7 +24,7 @@ export default function Register(props) {
       <h2>Register</h2>
       <form onSubmit={(e) => {
         e.preventDefault();
-        // handleLogin(formData);
+        handleRegister(formData);
       }}>
         <label htmlFor='form-email'>email</label>
         <input id='form-email'
