@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 
 export default function Login() {
   const[formData, setFormData] = useState({
@@ -16,22 +17,26 @@ export default function Login() {
   }
 
   return (
-    <form>
-      <label for='form-email'>email</label>
-      <input id='form-email'
-        type='text'
-        name='email'
-        value={email}
-        onChange={handleChange}
-      />
-      <label for='form-password'>password</label>
-      <input id='form-password'
-        type='password'
-        name='password'
-        value={password}
-        onChange={handleChange}
-      />
-      <button>Submit</button>
-    </form>
+    <>
+      <h2>Login</h2>
+      <form>
+        <label for='form-email'>email</label>
+        <input id='form-email'
+          type='text'
+          name='email'
+          value={email}
+          onChange={handleChange}
+        />
+        <label for='form-password'>password</label>
+        <input id='form-password'
+          type='password'
+          name='password'
+          value={password}
+          onChange={handleChange}
+        />
+        <Link to='/register'>Register</Link>
+        <button>Submit</button>
+      </form>
+    </>
   )
 }
