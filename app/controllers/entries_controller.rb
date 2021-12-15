@@ -19,6 +19,22 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     @entry.user = @current_user
+
+    # Retrieve starting and ending average CPI values by starting/end yaer
+    @starting_datum = CpiDatum.find_by(year: @entry.starting_year).avg_cpi
+    @ending_datum = CpiDatum.find_by(year: @entry.ending_year).avg_cpi
+
+    # If starting year is before ending year: starting_value * ( ending_CPI / starting_CPI )
+    # Else if starting year is after ending year: starting_value * ( starting_CPI / ending_CPI )
+    # Else if they are equal, just make ending value equal to the starting value
+    if @entry.starting_year < @entry.ending_year
+      @entry.ending_value = (@entry.starting_value * ( @ending_datum / @starting_datum )).round(2)
+    elsif @entry.starting_year > @entry.ending_year
+      @entry.ending_value = (@entry.starting_value * ( @starting_datum / @ending_datum)).round(2)
+    else
+      @entry.ending_value = @entry.starting_value.round(2)
+    end
+
     if @entry.save
       render json: @entry, status: :created
     else
