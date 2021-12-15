@@ -18,6 +18,14 @@ hr {
 a {
   color: #ff0043;
 }
+button {
+  display: inline-block;
+  padding: 3px 6px;
+  border: 1px solid;
+  background: transparent;
+  font-size: 16px;
+  color: #ff0043;
+}
 
 /* Header ------------------------------------------------------------------- */
 
@@ -55,12 +63,12 @@ form button {
 
 /* Entries ------------------------------------------------------------------ */
 
-.entries {
-  margin-top: 50px;
+.entry-list {
+  padding: 0;
+  list-style-type: none;
 }
-.entries span {
-  padding: 5px 10px;
-  background: #111;
+.entry {
+
 }
 
 /* Footer ------------------------------------------------------------------- */

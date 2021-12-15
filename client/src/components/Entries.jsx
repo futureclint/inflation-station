@@ -4,26 +4,28 @@ export default function Entries(props) {
 
   return (
     <>
-      <h3>Entries</h3>
+      <h2>Entries</h2>
 
-      {entries.map((entry, idx) => (
-        <div class="entry" key={idx}>
+      <ul class="entry-list">
+        {entries.map((entry, idx) => (
+          <li class="entry" key={idx}>
 
-          <span>${entry.starting_value} in {entry.starting_year} is the same as {entry.ending_value} in {entry.ending_year}</span>
+            <span>${entry.starting_value} in {entry.starting_year} is the same as {entry.ending_value} in {entry.ending_year}</span>
 
-          <input />
+            { entry.description
+              ? <span class="entry-description">{entry.description}</span>
+              : null
+            }
+            { entry.description
+              ? <button>edit description</button>
+              : <button>add description</button>
+            }
 
-          { entry.description
-            ? <span class="entry-description">{entry.description}</span>
-            : null
-          }
-          { entry.description
-            ? <button>edit description</button>
-            : <button>add description</button>
-          }
+            <button>delete</button>
 
-        </div>
-      ))}
+          </li>
+        ))}
+      </ul>
 
     </>
   )
