@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {getAllEntries} from '../services/entry';
-import Calculate from '../screens/Calculate';
+import Calculate from '../components/Calculate';
 
 export default function Main(props) {
 
