@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {getAllEntries} from '../services/entry';
+import {getAllEntries, postEntry} from '../services/entry';
 import Calculate from '../components/Calculate';
 import Entries from '../components/Entries';
 
@@ -19,9 +19,14 @@ export default function Main(props) {
     if (currentUser) fetchEntries();
   }, [currentUser]);
 
+  const handleEntryCreate = async (formData) => {
+    const newEntry = await postEntry(formData);
+    setEntries(prevState => [...prevState, newEntry]);
+  }
+
   return (
     <>
-      <Calculate />
+      <Calculate handleEntryCreate={handleEntryCreate} />
 
       {/* Show entries if logged in */}
       {currentUser && <Entries entries={entries} />}
