@@ -2,7 +2,9 @@ import {useState, useEffect} from 'react';
 import {getAllEntries} from '../services/entry';
 import Calculate from '../screens/Calculate';
 
-export default function Main() {
+export default function Main(props) {
+
+  const {currentUser} = props;
 
   const [inflation, setInflation] = useState([]);
 
@@ -13,15 +15,21 @@ export default function Main() {
       const entryList = await getAllEntries();
       setEntries(entryList);
     };
-    fetchEntries();
-  }, []);
+    if (currentUser) fetchEntries();
+  }, [currentUser]);
 
   return (
     <>
       <Calculate />
-      <div class="entries">
-        <span>${entries[0].starting_value} in {entries[0].starting_year} is the same as ${entries[0].ending_value} in {entries[0].ending_year}</span>
-      </div>
+
+      { currentUser
+        ? <div class="entries">
+            <h3>Entries</h3>
+            <span>${entries[0]?.starting_value} in {entries[0]?.starting_year} is the same as ${entries[0]?.ending_value} in {entries[0]?.ending_year}</span>
+          </div>
+        : null
+      }
+
     </>
   )
 }

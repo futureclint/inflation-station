@@ -54,7 +54,7 @@ function App() {
             <About />
           </Route>
           <Route path='/'>
-            <Main />
+            <Main currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>
