@@ -4,6 +4,11 @@ export default function Entries(props) {
 
   return (
     <>
+      {/* NOTE: temp separator */}
+      <br />
+      <p>- - - - -</p>
+      <br />
+
       <h2>Entries</h2>
 
       <ul class="entry-list">
