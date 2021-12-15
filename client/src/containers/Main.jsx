@@ -7,8 +7,6 @@ export default function Main(props) {
 
   const {currentUser} = props;
 
-  const [inflation, setInflation] = useState([]);
-
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
