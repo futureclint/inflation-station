@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import {getAllEntries} from '../services/entry';
 import Calculate from '../components/Calculate';
+import Entries from '../components/Entries';
 
 export default function Main(props) {
 
@@ -22,13 +23,8 @@ export default function Main(props) {
     <>
       <Calculate />
 
-      { currentUser
-        ? <div class="entries">
-            <h3>Entries</h3>
-            <span>${entries[0]?.starting_value} in {entries[0]?.starting_year} is the same as ${entries[0]?.ending_value} in {entries[0]?.ending_year}</span>
-          </div>
-        : null
-      }
+      {/* Show entries if logged in */}
+      {currentUser && <Entries entries={entries} />}
 
     </>
   )
