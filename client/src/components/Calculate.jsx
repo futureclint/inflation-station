@@ -6,11 +6,11 @@ export default function Calculate(props) {
 
   const [formData, setFormData] = useState({
     starting_year: '',
-    starting_amount: NaN,
+    starting_value: 0,
     ending_year: '',
   })
 
-  const { starting_year, starting_amount, ending_year } = formData;
+  const { starting_year, starting_value, ending_year } = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,8 +39,8 @@ export default function Calculate(props) {
         <input
           id='form-starting-amount'
           type='number'
-          name='starting_amount'
-          value={starting_amount}
+          name='starting_value'
+          value={starting_value}
           onChange={handleChange}
         />
         <label htmlFor='form-ending-year'>Ending Year</label>
