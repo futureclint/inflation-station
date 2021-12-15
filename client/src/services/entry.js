@@ -11,3 +11,14 @@ export const postEntry = async (entryData) => {
   const resp = await api.post('/entries', { entry: entryData });
   return resp.data;
 }
+
+// PUT
+export const putEntry = async (id, entryData) => {
+  const resp = await api.put(`/entries/${id}`, { entry: entryData });
+  return resp.data;
+}
+
+// DELETE
+export const deleteEntry = async (id) => {
+  const resp = await api.delete(`/entries/${id}`);
+}
