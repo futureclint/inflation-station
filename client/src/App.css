@@ -25,6 +25,7 @@ button {
   background: transparent;
   font-size: 16px;
   color: #ff0043;
+  cursor: pointer;
 }
 
 /* Header ------------------------------------------------------------------- */
