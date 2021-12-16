@@ -23,7 +23,7 @@ export default function Entry(props) {
       { currentUser.id === entry.user_id ? (
         <li className="entry" key={idx}>
 
-          <span>${entry.starting_value} in {entry.starting_year} is the same as {entry.ending_value} in {entry.ending_year}</span>
+          <span><b>${entry.starting_value}</b> in <b>{entry.starting_year}</b> is the same as <b>${entry.ending_value}</b> in <b>{entry.ending_year}</b></span>
 
           <form onSubmit={(e) => {
             e.preventDefault();
@@ -42,6 +42,9 @@ export default function Entry(props) {
           </form>
 
           <button onClick={() => handleEntryDelete(entry.id)}>delete</button>
+
+          {/* NOTE: temp spacing */}
+          <br /><br />
 
         </li>
       ) : ''}
