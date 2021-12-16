@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {getAllEntries, postEntry} from '../services/entry';
+import {getAllEntries, postEntry, putEntry, deleteEntry} from '../services/entry';
 import Calculate from '../components/Calculate';
 import Entries from '../components/Entries';
 
@@ -22,12 +22,30 @@ export default function Main(props) {
     setEntries(prevState => [...prevState, newEntry]);
   }
 
+  const handleEntryDelete = async (id) => {
+    await deleteEntry(id);
+    setEntries(prevState => prevState.filter(entry => entry.id !== id));
+  }
+
+  const handleEntryUpdate = async (id, formData) => {
+    const newEntry = await putEntry(id, formData);
+    setEntries((prevState) =>
+      prevState.map((entry) => {
+        return entry.id === Number(id) ? newEntry : entry;
+      })
+    );
+  };
+
   return (
     <>
       <Calculate handleEntryCreate={handleEntryCreate} />
 
       {/* Show entries if logged in */}
-      {currentUser && <Entries entries={entries} />}
+      {currentUser && <Entries
+        entries={entries}
+        handleEntryUpdate={handleEntryUpdate}
+        handleEntryDelete={handleEntryDelete}
+      />}
 
     </>
   )

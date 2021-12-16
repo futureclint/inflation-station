@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: :show
-  before_action :authorize_request, only: :create
+  before_action :authorize_request, only: [:create, :update, :destroy]
   before_action :set_user_entry, only: [:update, :destroy]
 
   # GET /entries
@@ -68,6 +68,6 @@ class EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entry_params
-      params.require(:entry).permit(:starting_value, :starting_year, :ending_value, :ending_year, :description)
+      params.require(:entry).permit(:starting_value, :starting_year, :ending_value, :ending_year, :description, :user_id)
     end
 end

@@ -12,7 +12,7 @@ export const postEntry = async (entryData) => {
   return resp.data;
 }
 
-// PUT
+//PUT
 export const putEntry = async (id, entryData) => {
   const resp = await api.put(`/entries/${id}`, { entry: entryData });
   return resp.data;
@@ -20,5 +20,5 @@ export const putEntry = async (id, entryData) => {
 
 // DELETE
 export const deleteEntry = async (id) => {
-  const resp = await api.delete(`/entries/${id}`);
+  await api.delete(`/entries/${id}`);
 }
