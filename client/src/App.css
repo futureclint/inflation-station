@@ -28,6 +28,21 @@ button {
   cursor: pointer;
 }
 
+/* Constrain page width on wide widths */
+@media (min-width: 800px) {
+  .app-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Reduce body padding on narrow widths */
+@media (max-width: 500px) {
+  body {
+    padding: 15px;
+  }
+}
+
 /* Header ------------------------------------------------------------------- */
 
 header {
