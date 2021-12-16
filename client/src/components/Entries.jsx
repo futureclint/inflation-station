@@ -1,7 +1,6 @@
-import {useState} from 'react';
 import Entry from '../components/Entry';
 
-export default function Entries({ entries, handleEntryUpdate, handleEntryDelete }) {
+export default function Entries({ entries, currentUser, handleEntryUpdate, handleEntryDelete }) {
 
   return (
     <>
@@ -17,6 +16,7 @@ export default function Entries({ entries, handleEntryUpdate, handleEntryDelete 
           <Entry
             entry={entry}
             idx={idx}
+            currentUser={currentUser}
             handleEntryUpdate={handleEntryUpdate}
             handleEntryDelete={handleEntryDelete}
           />

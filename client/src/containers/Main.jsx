@@ -43,6 +43,7 @@ export default function Main(props) {
       {/* Show entries if logged in */}
       {currentUser && <Entries
         entries={entries}
+        currentUser={currentUser}
         handleEntryUpdate={handleEntryUpdate}
         handleEntryDelete={handleEntryDelete}
       />}
