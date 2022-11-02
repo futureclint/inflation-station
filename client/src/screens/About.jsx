@@ -2,7 +2,16 @@ export default function About() {
   return (
     <>
       <h2>About</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec condimentum dictum dolor, ac imperdiet quam pharetra in. Donec rutrum consectetur massa pharetra pretium. Nulla molestie, tortor vitae fermentum convallis, velit risus sodales metus, sed consectetur urna ligula sed augue. Maecenas non arcu a risus auctor ullamcorper. Proin commodo condimentum ipsum a mattis. Suspendisse porta eleifend tortor ac vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed vitae ante sed lorem placerat bibendum ut quis lacus. Quisque non vehicula enim. Proin at auctor sem.</p>
+      <br />
+      <p>Inflation Station is a work-in-progress inflation calculating app that allows users to calculate inflation based on CPI data.</p>
+      <br />
+      <p>Most Outstanding Issues:</p>
+      <ul>
+        <li>User must be logged in to calculate</li>
+        <li>Data range is currently 1913-2021</li>
+        <li>No error messages have been added</li>
+        <li>Design and layout are incomplete</li>
+      </ul>
     </>
   )
 }
