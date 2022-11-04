@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import {getAllEntries, postEntry, putEntry, deleteEntry} from '../services/entry';
 import Calculate from '../components/Calculate';
 import Entries from '../components/Entries';
@@ -38,9 +39,16 @@ export default function Main(props) {
 
   return (
     <>
-      <Calculate handleEntryCreate={handleEntryCreate} />
 
-      {/* Show entries if logged in */}
+      {/* Show prompt to login if not logged in */}
+      {currentUser === null && <div>
+        <p>Please <Link to='/login'>Login or Register</Link> to calculate. Calculation without login is coming soon.</p>
+      </div>}
+
+      {/* Show entries and calculate if logged in */}
+      {currentUser && <Calculate
+        handleEntryCreate={handleEntryCreate}
+      />}
       {currentUser && <Entries
         entries={entries}
         currentUser={currentUser}
