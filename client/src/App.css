@@ -76,6 +76,9 @@ form button {
   display: block;
   margin: 6px 0;
 }
+form button {
+  margin: 15px 0;
+}
 
 /* Entries ------------------------------------------------------------------ */
 
