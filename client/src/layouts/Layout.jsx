@@ -7,7 +7,7 @@ export default function Layout(props) {
   return (
     <>
       <header>
-        <h1>Inflation Station</h1>
+        <h1><span class="emoji">&#128642;</span> Inflation Station</h1>
         <nav>
           <Link to='/'>Calculate</Link>
           <Link to='/about'>About</Link>
