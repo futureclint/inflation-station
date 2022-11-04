@@ -24,7 +24,7 @@ export default function Layout(props) {
       <hr />
       <footer>
         <div className="footer-left">
-          <span>&copy; 2021 Clint Gunter</span>
+          <span>&copy; 2021–Present Clint Gunter</span>
         </div>
         <div className="footer-right">
           {currentUser && <span>Logged in as {currentUser.email}</span>}
