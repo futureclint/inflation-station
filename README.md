@@ -1,6 +1,6 @@
 # Inflation Station
 
-- Deployed front-end: <a href="http://inflation-station.surge.sh/login" target="_blank">http://inflation-station.surge.sh/login</a>
+- Deployed front-end: <a href="https://inflation-station.netlify.app" target="_blank">https://inflation-station.netlify.app</a>
 - Deployed back-end: <a href="https://inflation-station.herokuapp.com" target="_blank">https://inflation-station.herokuapp.com</a>
 
 ## Overview
