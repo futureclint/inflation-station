@@ -1,5 +1,7 @@
 # Inflation Station
 
+A full revision of this project is [in development](https://github.com/futureclint/inflation-station-2).
+
 - Deployed front-end: <a href="https://inflation-station.netlify.app" target="_blank">https://inflation-station.netlify.app</a>
 - Deployed back-end: <a href="https://inflation-station.herokuapp.com" target="_blank">https://inflation-station.herokuapp.com</a>
 
